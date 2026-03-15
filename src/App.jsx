@@ -5,21 +5,33 @@ import ProjectCard from './components/ProjectCard';
 const projectsData = [
   {
     id: '01',
-    title: 'Cyber-Vault Security',
-    description: 'Next-gen authentication infrastructure featuring biometric simulation and encrypted edge nodes.',
-    tags: ['React', 'Node.js', 'WebCrypto API'],
+    title: 'University Enrollment System',
+    description: 'A full-stack University Enrollment System built with React and Firebase. Features automated administrative workflows, student portals, and real-time status management.',
+    tags: ['React', 'Firebase', 'Tailwind', 'EmailJS'],
   },
   {
     id: '02',
-    title: 'Neural-Net Visualizer',
-    description: 'High-performance 3D visualization of dense neural pathways operating in real-time.',
-    tags: ['Three.js', 'React', 'WebGL'],
+    title: 'MSU Suggestion Box',
+    description: 'A Flutter-based digital feedback platform for Mindanao State University. Features secure suggestion submission and a real-time admin oversight dashboard.',
+    tags: ['Flutter', 'Dart', 'Firebase', 'Mobile'],
   },
   {
     id: '03',
-    title: 'Pulse-OS Light',
-    description: 'A cutting-edge data dashboard monitoring IoT arrays with predictive maintenance analytics.',
-    tags: ['Next.js', 'Vite', 'GraphQL'],
+    title: 'Barangay E-Form & Face Verification',
+    description: 'A digital governance solution for document requests featuring secure facial recognition verification and automated administrative fulfillment.',
+    tags: ['Next.js', 'PySide', 'Face-API', 'PostgreSQL'],
+  },
+  {
+    id: '04',
+    title: 'Badminton Queueing System',
+    description: 'A Python-based automation tool for court management. Features custom matching algorithms, SQLite backend, and a "click-and-run" desktop experience.',
+    tags: ['Python', 'PyQt6', 'SQLite', 'Algorithms'],
+  },
+  {
+    id: '05',
+    title: 'Automated Sliding Door System',
+    description: 'An embedded systems application using PIC microcontrollers and MikroC Pro. Automates door mechanics via multi-input sensor integration.',
+    tags: ['PIC Microcontroller', 'MikroC Pro', 'Embedded C', 'Hardware'],
   }
 ];
 
