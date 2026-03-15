@@ -67,9 +67,6 @@ function App() {
                 <button className="primary-btn mono" onClick={() => setActiveTab('projects')}>
                   EXPLORE_DATABANKS
                 </button>
-                <button className="secondary-btn mono">
-                  ACQUIRE_RESUME.PDF
-                </button>
               </div>
             </div>
 
