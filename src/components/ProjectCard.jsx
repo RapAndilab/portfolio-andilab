@@ -1,20 +1,20 @@
 import React, { useState, useRef } from 'react';
 
-const ProjectCard = ({ title, description, tags, id }) => {
+const ProjectCard = ({ title, description, tags, id, image }) => {
   const cardRef = useRef(null);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const [imgError, setImgError] = useState(false);
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
     const card = cardRef.current;
     const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left; // x position within the element.
-    const y = e.clientY - rect.top;  // y position within the element.
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
     
-    // Calculate rotation percentage (-1 to +1)
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -5; // Max 5 deg rotation
+    const rotateX = ((y - centerY) / centerY) * -5;
     const rotateY = ((x - centerX) / centerX) * 5;
 
     setRotation({ x: rotateX, y: rotateY });
@@ -35,10 +35,21 @@ const ProjectCard = ({ title, description, tags, id }) => {
         transition: rotation.x === 0 && rotation.y === 0 ? 'transform 0.5s ease-out' : 'initial'
       }}
     >
-      <div className="project-image-placeholder mono">
-        <div className="glitch-box">
-          DATA_STREAM::PRJ_0{id}
-        </div>
+      <div className="project-image-container">
+        {image && !imgError ? (
+          <img 
+            src={image} 
+            alt={title} 
+            className="project-display-img" 
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <div className="project-image-placeholder mono">
+            <div className="glitch-box">
+              DATA_STREAM::PRJ_0{id}
+            </div>
+          </div>
+        )}
       </div>
       <div className="project-info">
         <div className="project-meta mono">PROTOCOL: {id}</div>

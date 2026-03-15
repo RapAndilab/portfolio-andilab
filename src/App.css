@@ -395,15 +395,36 @@
 }
 
 .project-card {
-  padding: 0; /* Reset for internal structure */
+  padding: 0; 
   display: flex;
   flex-direction: column;
   transition: var(--transition-smooth);
   cursor: pointer;
   height: 100%;
-  overflow: hidden; /* For inner image scale */
+  overflow: hidden; 
   position: relative;
+  background: var(--bg-secondary);
 }
+
+.project-image-container {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.project-display-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-display-img {
+  transform: scale(1.08);
+}
+
 
 .project-card::before {
   content: '';
@@ -430,17 +451,15 @@
 }
 
 .project-image-placeholder {
-  height: 220px;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--text-dim);
-  overflow: hidden;
-  position: relative;
-  border-bottom: 1px solid var(--glass-border);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
 .project-image-placeholder::after {
@@ -468,7 +487,7 @@
 }
 
 .project-info {
-  padding: 1.8rem;
+  padding: 1.5rem 1.8rem 1.8rem;
   background: transparent;
   flex: 1;
   display: flex;
@@ -524,6 +543,29 @@
   background: rgba(0, 136, 255, 0.1);
   color: var(--accent-cyan);
   border-color: rgba(0, 136, 255, 0.2);
+}
+
+.contact-link-item {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: var(--transition-snappy);
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.contact-link-item:hover {
+  color: var(--text-main);
+  background: rgba(14, 165, 233, 0.05);
+  border-color: rgba(14, 165, 233, 0.15);
+  transform: translateX(5px);
+}
+
+.accent-text {
+  color: var(--accent-cyan);
+  font-weight: 700;
+  margin-right: 10px;
 }
 
 /* --- Footer --- */
